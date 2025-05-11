@@ -19,7 +19,8 @@ It supports:
 # clone the project
 git clone https://github.com/Linzar-Slytherin/SDS.git
 # setup the SDS conda environment
-conda env create -f environment.yml && conda activate distserve
+conda env create -f environment.yml && conda activate sds
+cd DISTSERVE/DistServe
 
 # clone and build the SwiftTransformer library  
 git clone https://github.com/LLMServe/SwiftTransformer.git && cd SwiftTransformer && git submodule update --init --recursive
