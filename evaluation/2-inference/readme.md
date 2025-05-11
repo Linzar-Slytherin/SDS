@@ -10,6 +10,9 @@ To save your time, we've preprocessed the datasets in advance and saved them to 
 
 On the `S-terminal`, execute 
 ```bash
+conda init fish
+exec fish
+conda activate distserve
 bash /workspace/SDS/evaluation/2-inference/optserver.sh
 ```
 
