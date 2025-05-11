@@ -1,1 +1,22 @@
+000000,add,node0
+000000,add,node1
+000000,add,node2
+000000,add,node3
+000000,add,node4
+000000,add,node5
+000000,add,node6
+000000,add,node7
+120000,remove,node4
+180000,remove,node1
+180000,remove,node5
+480000,add,node4
+540000,add,node1
+720000,remove,node7
+960000,add,node7
+132000,remove,node7
+162000,add,node7
+192000,remove,node3
+192000,remove,node6
+192000,remove,node7
+
 
