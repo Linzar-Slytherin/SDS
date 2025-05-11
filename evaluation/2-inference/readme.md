@@ -1,6 +1,6 @@
 # SDS Artifact Evaluation Guide
 
-This is the artifact of the paper "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving". We are going to guide you through the process of reproducing the main results in the paper.
+This is the artifact of the paper SDS. We are going to guide you through the process of reproducing the main results in the paper.
 
 Here is a high level overview of the whole process:
 1. Environment Setup: Create a GPU instance on [RunPod](https://www.runpod.io/) from our provided template with all the environment already setup.
