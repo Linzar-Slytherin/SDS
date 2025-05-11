@@ -40,6 +40,6 @@ SDS relies on [Ray](https://ray.io) to implement distributed workers. If you do 
 
 ### Evaluation
 
-To reproduce all the experiments in our paper, please follow the [guidance](./evaluation/README.md).
+To reproduce all the experiments in our paper, please follow the [[guidance](./evaluation/README.md).](https://github.com/Linzar-Slytherin/SDS/blob/main/evaluation/2-inference/readme.md)
 
 
