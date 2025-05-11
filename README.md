@@ -1,6 +1,6 @@
-# DistServe
+# SDS
 
-DistServe improves the performance of large language models (LLMs) serving by disaggregating the prefill and decoding
+SDS improves the performance of large language models (LLMs) serving by disaggregating the prefill and decoding
 computation. Existing LLM serving systems colocate the two
 phases and batch the computation of prefill and decoding
 across all users and requests. We find that this strategy not
