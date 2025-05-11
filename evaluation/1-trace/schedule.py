@@ -315,7 +315,7 @@ class GPUResourceManager:
         """
         依次执行本时间戳内待发出的所有接口调用，并将每个操作单独写入文件
         """
-        with open('true.json', 'a') as logfile:
+        with open('ops.json', 'a') as logfile:
             for op in self.interface_ops:
                 log_entry = {}
                 if op[0] == "remove":
