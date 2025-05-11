@@ -10,21 +10,29 @@ Here is a high level overview of the whole process:
 To save your time, we've preprocessed the datasets in advance and saved them to `/app/dataset` in the template. If you want to reproduce the dataset, please follow [this instruction](repro-dataset.md).
 
 
-### DistServe
+### SDS
 
 On the `S-terminal`, execute 
 ```bash
-bash /app/distserve/distserve/evaluation/ae-scripts/kick-the-tires/distllm-server.sh
+bash /workspace/SDS/evaluation/2-inference/optserver.sh
 ```
 
 Wait until the server is ready (i.e. the engine begins to print its status once per second)
 
-On the `C-terminal`, execute 
+On the `T-terminal`, execute 
 ```bash
-bash /app/distserve/distserve/evaluation/ae-scripts/kick-the-tires/distllm-client.sh
+bash /app/distserve/distserve/evaluation/ae-scripts/kick-the-tires/distllm-server.sh
+
 ```
 
-Ideally it should generate a file `/workspace/exp-results/opt-125m-sharegpt/distserve-10-1.exp`. The file should contain a JSON object which looks like:
+Wait until the server is ready (i.e. the engine begins to print its status once per second)
+On the `C-terminal`, execute 
+```bash
+export EXP_RESULT_ROOT=/workspace/distgpu2/gpu8
+bash /workspace/SDS/evaluation/2-inference/client.sh
+```
+
+Ideally it should generate a file `/workspace/distgpu2/gpu8/distserve-2000-10.exp`. The file should contain a JSON object which looks like:
 
 ```
 [{"prompt_len": 1135, "output_len": 12, "start_time": 200915.496689009, "end_time": 200915.565055445, "token_timestamps": [...]}, ...]
@@ -32,8 +40,7 @@ Ideally it should generate a file `/workspace/exp-results/opt-125m-sharegpt/dist
 
 ## Full Evaluation
 
-### End-to-end Experiments (Section 6.2, Figure. 8 + Figure. 9)
-*15 human-minutes + 90 compute-minutes*
+### End-to-end Experiments
 
 The OPT-175B experiment of DistServe requires four 8xA100-SXM-80GB machines. On common cloud providers like AWS or RunPod, this experiment costs over 2000$ in total for each run. Due to the limited budget, it is too expensive for us to reproduce the OPT-175B experiment (Figure. 8c) so we reuse the data in our paper. But we do provide the scripts for interested ones who have enough resources to produce the results by themselves.
 
@@ -78,23 +85,6 @@ Wait until the client finishes (i.e. exits without any error)
 
 And then let's move on to the OPT-66B experiment in Figure. 8:
 
-First for vLLM:
-
-On the `S-terminal`, execute 
-```bash
-bash /app/distserve/distserve/evaluation/ae-scripts/e2e/opt-66b-vllm-server.sh
-```
-Wait until the server is ready (i.e. `# GPU blocks: XXX, # CPU blocks: XXX` pops up)
-
-On the `C-terminal`, execute 
-```bash
-bash /app/distserve/distserve/evaluation/ae-scripts/e2e/opt-66b-vllm-client.sh
-```
-This script runs all three datasets (ShareGPT, HumanEval, LongBench) in sequence, which will take a while (~30 minutes).
-
-Wait until the client finishes (i.e. exits without any error)
-
----
 
 Then for DistServe:
 
