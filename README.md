@@ -17,9 +17,8 @@ It supports:
 ## Build && Install
 ```shell
 # clone the project
-git clone https://github.com/LLMServe/DistServe.git && cd DistServe
-
-# setup the distserve conda environment
+git clone https://github.com/Linzar-Slytherin/SDS.git
+# setup the SDS conda environment
 conda env create -f environment.yml && conda activate distserve
 
 # clone and build the SwiftTransformer library  
