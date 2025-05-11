@@ -2,13 +2,9 @@
 
 This is the artifact of the paper SDS. We are going to guide you through the process of reproducing the main results in the paper.
 
-Here is a high level overview of the whole process:
-1. Environment Setup: Create a GPU instance on [RunPod](https://www.runpod.io/) from our provided template with all the environment already setup.
-2. Full evaluation: Reproduce all the main results in the paper.
 
 ### Dataset Preprocessing
-To save your time, we've preprocessed the datasets in advance and saved them to `/app/dataset` in the template. If you want to reproduce the dataset, please follow [this instruction](repro-dataset.md).
-
+To save your time, we've preprocessed the datasets in advance and saved them to `/app/dataset` in the template. If you want to reproduce the dataset, please follow 
 
 ### SDS Evaluation
 
