@@ -21,14 +21,14 @@ Wait until the server is ready (i.e. the engine begins to print its status once 
 
 On the `T-terminal`, execute 
 ```bash
-bash /app/distserve/distserve/evaluation/ae-scripts/kick-the-tires/distllm-server.sh
+python /workspace/SDS/evaluation/2-inference/2-res.py --ops.json
 
 ```
 
 On the `C-terminal`, execute 
 ```bash
 export EXP_RESULT_ROOT=/workspace/distgpu2/gpu8
-bash /workspace/SDS/evaluation/2-inference/client.sh
+bash /workspace/SDS/evaluation/2-inference/optclient.sh
 ```
 
 Ideally it should generate a file `/workspace/distgpu2/gpu8/distserve-2000-10.exp`. The file should contain a JSON object which looks like:
