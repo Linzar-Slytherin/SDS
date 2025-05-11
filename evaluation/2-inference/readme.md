@@ -4,7 +4,7 @@ This is the artifact of the paper SDS. We are going to guide you through the pro
 
 
 ### Dataset Preprocessing
- please follow 0-data
+ please follow 0-dataset
 
 ### SDS Evaluation
 
