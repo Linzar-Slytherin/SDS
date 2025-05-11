@@ -6,12 +6,6 @@ Here is a high level overview of the whole process:
 1. Environment Setup: Create a GPU instance on [RunPod](https://www.runpod.io/) from our provided template with all the environment already setup.
 2. Full evaluation: Reproduce all the main results in the paper.
 
-## Environment Setup
-
-We use the cloud provider [Runpod](https://www.runpod.io/) to create compute instances and run all the experiments on them. We provided credentials for you to log in to Runpod in hotcrp and you can start the instance from a template with all the environments set up already. Different experiments require a different number of compute resources, please follow the detailed guidance below in each section to create the instance.
-
-**It is appreciated to stop the instance when you finish the review process each time, we pay real dollars for the GPU hours :)**
-
 ### Dataset Preprocessing
 To save your time, we've preprocessed the datasets in advance and saved them to `/app/dataset` in the template. If you want to reproduce the dataset, please follow [this instruction](repro-dataset.md).
 
