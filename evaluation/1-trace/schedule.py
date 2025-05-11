@@ -2,7 +2,12 @@ import asyncio
 import math
 import json  # 导入 json 模块，用于格式化输出
 from uu import decode
+from pathlib import Path
 
+# 1) 在程序启动时读取外部 events.json
+events_file = Path(__file__).parent / "events.json"
+with open(events_file, "r") as f:
+    events1 = json.load(f)
 
 # 模拟 llm.engine 接口（实际使用时请替换为真实接口）
 class Engine:
