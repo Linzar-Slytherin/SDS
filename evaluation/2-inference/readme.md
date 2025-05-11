@@ -9,23 +9,6 @@ Here is a high level overview of the whole process:
 ### Dataset Preprocessing
 To save your time, we've preprocessed the datasets in advance and saved them to `/app/dataset` in the template. If you want to reproduce the dataset, please follow [this instruction](repro-dataset.md).
 
-### vLLM
-
-On the `S-terminal`, execute 
-```bash
-bash /app/distserve/distserve/evaluation/ae-scripts/kick-the-tires/vllm-server.sh
-```
-
-Wait until the server is ready (i.e. `# GPU blocks: XXX, # CPU blocks: XXX` pops up)
-
-On the `C-terminal`, execute 
-```bash
-bash /app/distserve/distserve/evaluation/ae-scripts/kick-the-tires/vllm-client.sh
-```
-
-In the script we add the `--verbose` flag to print out all prompts && responses for a simple correctness check. In the full evaluation section, we will not use this flag.
-
-Ideally it should run without any error, and generate a file `/workspace/exp-results/opt-125m-sharegpt/vllm-10-1.exp`.
 
 ### DistServe
 
