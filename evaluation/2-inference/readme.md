@@ -4,7 +4,7 @@ This is the artifact of the paper SDS. We are going to guide you through the pro
 
 
 ### Dataset Preprocessing
-To save your time, we've preprocessed the datasets in advance and saved them to `/app/dataset` in the template. If you want to reproduce the dataset, please follow 
+ please follow 0-data
 
 ### SDS Evaluation
 
