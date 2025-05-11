@@ -21,7 +21,7 @@ Wait until the server is ready (i.e. the engine begins to print its status once 
 
 On the `T-terminal`, execute 
 ```bash
-python /workspace/SDS/evaluation/2-inference/2-res.py --operations-file ops.json
+python /workspace/SDS/evaluation/2-inference/2-res.py --operations-file /workspace/SDS/evaluation/1-trace/ops.json
 
 ```
 
