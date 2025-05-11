@@ -5,7 +5,7 @@ from uu import decode
 from pathlib import Path
 
 # 1) 在程序启动时读取外部 events.json
-events_file = Path(__file__).parent / "events.json"
+events_file = Path(__file__).parent /trace/"test2000s.json"
 with open(events_file, "r") as f:
     events1 = json.load(f)
 
