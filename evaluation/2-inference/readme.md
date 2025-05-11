@@ -15,28 +15,6 @@ We use the cloud provider [Runpod](https://www.runpod.io/) to create compute ins
 ### Dataset Preprocessing
 To save your time, we've preprocessed the datasets in advance and saved them to `/app/dataset` in the template. If you want to reproduce the dataset, please follow [this instruction](repro-dataset.md).
 
-## Kick-the-tires
-*15 human-minutes + 15 compute-minutes*
-
-Follow the steps below to create a instance with two `A100 SXM 80GB` GPUs on [RunPod](https://www.runpod.io/) with template `DistServe-AE-GPU`: 
-- Log in to [RunPod](https://www.runpod.io/) with the credentials provided in hotcrp.
-- Switch the account from `osdi24ae` to `Hao Lab@UCSD` using the upper right button.
-- Click `Pods` in the left toolbar.
-- Click `+ Deploy`.
-- Choose `A100 SXM 80GB`.
-- Click `Change Template` and choose `DistServe-AE-GPU`.
-- Choose `GPU Count`: For Kick-the-tires, 2 GPUs are sufficient, which is usually always available on RunPod. 
-- Click `Deploy On-Demand`: If the button is grey, it means this resource is not currently available.
-- We suggest you to change the instance name to `DistServe-AE-GPU-<your_reviewer_id>`, to distinguish it from other reviewers' instances and avoid conflicts with other reviewers. To achieve this, please navigate to the `Pods` page, click on the down arrow on the right side of the instance name, click on the pencil icon next to the instance name, and change the name to `DistServe-AE-GPU-<your_reviewer_id>`.
-
-
-When the instance is started, you can ssh into the instance  in your terminal. Remember to provide your public key on the hotcrp so that we can give you the access to the instance you create. Here are some high-level overviews and notes:
-- From now on, we need to use two terminals simultaneously, one for the server (i.e. the inference engine), and one for the client (i.e. the load generator). We will refer to them as `S-terminal` and `C-terminal` respectively.
-- We will use a wrapper script, `/app/distserve/distserve/evaluation/2-benchmark-serving/2-start-api-server.py`, to launch the API server. The script will print the command it uses to launch the server, which can be used to inspect the startup parameters.
-- The load generator locates at `/app/distserve/distserve/evaluation/2-benchmark-serving/2-benchmark-serving.py`. Given a target dataset and a list of (num_prompt, request_rate)s, it runs serval rounds of experiments, each with a given (num_prompt, request_rate) pair, and save the result to a file located at `/workspace/exp-results/<model-name>-<dataset-name>/<backend>-<num_prompt>-<request_rate>.exp`, for example, `/workspace/exp-results/opt-13b-sharegpt/vllm-50-2.exp`
-
-Now we can run some toy examples to verify DistServe and vLLM are working:
-
 ### vLLM
 
 On the `S-terminal`, execute 
