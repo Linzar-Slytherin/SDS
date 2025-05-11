@@ -1,6 +1,6 @@
 # trace
 
-we use trace from https://github.com/Hsword/SpotServe
+we use spot trace from https://github.com/Hsword/SpotServe
 
 ## Build && Install
 
