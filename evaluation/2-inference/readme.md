@@ -1,11 +1,10 @@
-# DistServe Artifact Evaluation Guide
+# SDS Artifact Evaluation Guide
 
 This is the artifact of the paper "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving". We are going to guide you through the process of reproducing the main results in the paper.
 
 Here is a high level overview of the whole process:
 1. Environment Setup: Create a GPU instance on [RunPod](https://www.runpod.io/) from our provided template with all the environment already setup.
-2. Kick-the-tires: Run some toy examples to verify DistServe and vLLM are working.
-3. Full evaluation: Reproduce all the main results in the paper.
+2. Full evaluation: Reproduce all the main results in the paper.
 
 ## Environment Setup
 
@@ -165,37 +164,3 @@ bash /app/distserve/distserve/evaluation/ae-scripts/e2e/plot-fig-8-and-9.sh
 ```
 Plots will be saved under `/workspace/plots`.
 
-### Latency Breakdown (Section 6.3, Figure. 10) 
-
-Due to the same budget reason, we cannot afford to reproduce the OPT-175B experiment in the left figure of Figure. 10. However, we provide a OPT-66B version which can also verify our claim in this Section that the transmission time is negligible compared to computation in DistServe.
-
-We also provide the [screencast](https://drive.google.com/drive/folders/1QCEkpV4Wi2WUutFnDR46NrsSTDXr8lL3?usp=sharing) of producing the results in Figure. 10 in case the reviewers do not want to experience the machine-grabbing process.
-
-If you have successfully obtained one 8xA100-SXM-80GB machine, after running end-to-end experiments above, you can execute 
-```bash
-bash /app/distserve/distserve/evaluation/ae-scripts/e2e/plot-fig-10.sh
-```
-to generate Figure. 10. Plots will be saved under `/workspace/plots`.
-
-### Ablation Studies (Section 6.4, Figure. 11)
-
-
-*Compute Time: 5 min*
-
-The ablation study is CPU-only. We preferred you allocate `RTX3090` or `L40S` where 32 vCPU instance is available. 
-
-Follow the steps below to create a instance with one `RTX3090` GPU instance on [RunPod](https://www.runpod.io/) with template `DistServe-AE-GPU`: 
-- Log in to [RunPod](https://www.runpod.io/) with the credentials provided in hotcrp.
-- Switch the account from `osdi24ae` to `Hao Lab@UCSD` using the upper right button.
-- Click `Pods` in the left toolbar.
-- Click `+ Deploy`.
-- Choose `RTX 3090`. Note that `vCPU` is 32.
-- Click `Change Template` and choose `DistServe-AE-GPU`.
-- Choose `GPU Count`: 1 GPUs is sufficient for this experiment. 
-- Click `Deploy On-Demand`: If the button is grey, it means this resource is not currently available.
-
-When you successfully log into the machine, execute the following commands to reproduce the results in Figure 11:
-```bash
-micromamba activate distserve
-bash /app/distserve/simdistserve/setup.sh
-bash /app/distserve/simdistserve/benchmarks/figure11-ablation/run_ablation.sh
