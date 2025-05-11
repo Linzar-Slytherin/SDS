@@ -8,6 +8,20 @@ import argparse
 import multiprocessing
 
 from backends import BACKEND_TO_PORTS
+import sys, os
+import subprocess, argparse, multiprocessing
+
+# === 覆盖 distserve 的 engine ===
+ROOT = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(ROOT, "src"))
+
+from engine       import Engine
+from singerengine import SingerEngine
+
+import DISTSERVE.distserve.engine        as OrigEng
+import DISTSERVE.distserve.singerengine  as OrigSing
+OrigEng.Engine       = Engine
+OrigSing.SingerEngine = SingerEngine
 
 MODEL_TO_PARALLEL_PARAMS = {
     "facebook/opt-125m": {
