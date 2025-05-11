@@ -25,7 +25,6 @@ bash /app/distserve/distserve/evaluation/ae-scripts/kick-the-tires/distllm-serve
 
 ```
 
-Wait until the server is ready (i.e. the engine begins to print its status once per second)
 On the `C-terminal`, execute 
 ```bash
 export EXP_RESULT_ROOT=/workspace/distgpu2/gpu8
