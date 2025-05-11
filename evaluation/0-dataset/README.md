@@ -23,6 +23,6 @@ Now you should have  `ShareGPT_V3_unfiltered_cleaned_split.json`under `$DATASET/
 
 ## Step 2. Preprocess datasets
 ```bash
-python3 workspace/SDS/DISTERVE/evaluation/2-benchmark-serving/0-prepare-dataset.py --dataset sharegpt --dataset-path workspace/raw/ShareGPT_V3_unfiltered_cleaned_split.json --tokenizer facebook/opt-13b --output-path $DATASET/sharegpt.ds
+python3 workspace/SDS/evaluation/0-dataset/0-prepare.py --dataset sharegpt --dataset-path workspace/raw/ShareGPT_V3_unfiltered_cleaned_split.json --tokenizer facebook/opt-13b --output-path $DATASET/sharegpt.ds
 ```
 Now you should have `sharegpt.ds`under `$DATASET/`.
