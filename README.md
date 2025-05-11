@@ -17,17 +17,16 @@ It supports:
 ## Build && Install
 ```shell
 # clone the project
-git clone https://github.com/Linzar-Slytherin/SDS.git
+git clone https://github.com/Linzar-Slytherin/SDS.git&& cd SDS
 # setup the SDS conda environment
 conda env create -f environment.yml && conda activate sds
-cd DISTSERVE/DistServe
-
+cd DISTSERVE
 # clone and build the SwiftTransformer library  
 git clone https://github.com/LLMServe/SwiftTransformer.git && cd SwiftTransformer && git submodule update --init --recursive
 cmake -B build && cmake --build build -j$(nproc)
 cd ..
 
-# install distserve
+# install sds
 pip install -e .
 ```
 
@@ -35,7 +34,7 @@ pip install -e .
 
 ### Launch Ray Cluster
 
-DistServe relies on [Ray](https://ray.io) to implement distributed workers. If you do not launch a Ray runtime in advance, it will automatically initiate a cluster consisting of all the gpus on the current node. You may need to start the Ray runtime manually in advance if you want to use multiple nodes for inference.
+SDS relies on [Ray](https://ray.io) to implement distributed workers. If you do not launch a Ray runtime in advance, it will automatically initiate a cluster consisting of all the gpus on the current node. You may need to start the Ray runtime manually in advance if you want to use multiple nodes for inference.
 
 
 
