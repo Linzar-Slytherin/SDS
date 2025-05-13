@@ -8,7 +8,7 @@ only leads to strong prefill-decoding interferences but also
 couples the resource allocation and parallelism plans for both
 phases. In DistServe, you can simply set the parallelism configs and scheduling strategies for the two phases and it will work just like a single instance which handles the KV-Cache communication and memory management automatically. 
 
-It utilizes a  inference library [SwiftTransformer](https://github.com/LLMServe/SwiftTransformer) and[DistServe](https://github.com/LLMServe/DistServe) as the execution backend,
+It utilizes a  inference library [SwiftTransformer](https://github.com/LLMServe/SwiftTransformer) and [DistServe](https://github.com/LLMServe/DistServe) as the execution backend,
 It supports:
 - GPT-2 (gpt2, gpt2-xl, ...)
 - OPT (facebook/opt-1.3b, facebook/opt-6.7b, ...)
