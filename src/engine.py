@@ -8,7 +8,6 @@ from typing import Dict, Callable
 
 import ray
 from ray.util.placement_group import PlacementGroup
-
 from distserve.config import (
     ModelConfig,
     DisaggParallelConfig,
