@@ -6,7 +6,7 @@ phases and batch the computation of prefill and decoding
 across all users and requests. We find that this strategy not
 only leads to strong prefill-decoding interferences but also
 couples the resource allocation and parallelism plans for both
-phases. In DistServe, you can simply set the parallelism configs and scheduling strategies for the two phases and it will work just like a single instance which handles the KV-Cache communication and memory management automatically. 
+phases. In DistServe, you can simply set the parallelism configs and scheduling strategies for the two phases and it will work just like a single instance which handles the KV-Cache communication and memory management automatically.
 
 It utilizes a  inference library [SwiftTransformer](https://github.com/LLMServe/SwiftTransformer) and [DistServe](https://github.com/LLMServe/DistServe) as the execution backend,
 It supports:
