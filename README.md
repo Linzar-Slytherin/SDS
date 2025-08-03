@@ -42,4 +42,6 @@ SDS relies on [Ray](https://ray.io) to implement distributed workers. If you do 
 
 To reproduce all the experiments in our paper, please follow the (https://github.com/Linzar-Slytherin/SDS/blob/main/evaluation/2-inference/readme.md)
 
+### Note
 
+The inference engine frontend of this project is based on DistServe. The modified portions of the original implementation have been separately copied into the src directory for reference purposes. However, the actual experiment scripts do not utilize code from the src directory; instead, they directly run the modified version of DistServe.
